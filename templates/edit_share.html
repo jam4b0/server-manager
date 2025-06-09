@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Share "{{ share_name }}" bearbeiten</h2>
+<form method="POST">
+  {% for key, value in settings.items() %}
+    <div class="mb-3">
+      <label for="{{ key }}" class="form-label">{{ key }}</label>
+      <input type="text" class="form-control" id="{{ key }}" name="{{ key }}" value="{{ value }}" />
+    </div>
+  {% endfor %}
+  <button type="submit" class="btn btn-primary">Speichern</button>
+  <a href="{{ url_for('smb.dashboard') }}" class="btn btn-secondary">Abbrechen</a>
+</form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Benutzerverwaltung</h2>
+<a href="{{ url_for('usermgmt.add_user') }}" class="btn btn-success mb-3">Neuen Benutzer anlegen</a>
+<table class="table table-striped">
+  <thead><tr><th>Benutzername</th><th>UID</th><th>GID</th><th>Home</th><th>Shell</th><th>Aktionen</th></tr></thead>
+  <tbody>
+    {% for user in users %}
+      <tr>
+        <td>{{ user.name }}</td>
+        <td>{{ user.uid }}</td>
+        <td>{{ user.gid }}</td>
+        <td>{{ user.home }}</td>
+        <td>{{ user.shell }}</td>
+        <td>
+          <form method="POST" action="{{ url_for('usermgmt.delete_user', username=user.name) }}" style="display:inline-block" onsubmit="return confirm('Benutzer wirklich löschen?');">
+            <button type="submit" class="btn btn-sm btn-danger">Löschen</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

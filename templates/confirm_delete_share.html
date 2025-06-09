@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Share löschen</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="p-4">
+  <div class="container">
+    <h3>Share "{{ share_name }}" löschen</h3>
+    <form method="post">
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="delete_folder" name="delete_folder" value="yes">
+        <label class="form-check-label" for="delete_folder">
+          Ordner inklusive Inhalt <strong>löschen</strong> (VORSICHT: Daten gehen verloren!)
+        </label>
+      </div>
+      <button type="submit" class="btn btn-danger">Löschen</button>
+      <a href="{{ url_for('smb.dashboard') }}" class="btn btn-secondary">Abbrechen</a>
+    </form>
+  </div>
+</body>
+</html>

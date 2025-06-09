@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="max-width:400px; margin-top:100px;">
+  <h2>Login</h2>
+  <form method="POST">
+    <div class="mb-3">
+      <label for="username" class="form-label">Benutzername</label>
+      <input type="text" class="form-control" id="username" name="username" required autofocus />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Passwort</label>
+      <input type="password" class="form-control" id="password" name="password" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Anmelden</button>
+  </form>
+</div>
+{% endblock %}

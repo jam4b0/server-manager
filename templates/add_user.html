@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Neuen Benutzer anlegen</h2>
+<form method="POST">
+  <div class="mb-3">
+    <label for="username" class="form-label">Benutzername</label>
+    <input type="text" class="form-control" id="username" name="username" required />
+  </div>
+  <button type="submit" class="btn btn-success">Anlegen</button>
+  <a href="{{ url_for('usermgmt.users') }}" class="btn btn-secondary">Abbrechen</a>
+</form>
+{% endblock %}

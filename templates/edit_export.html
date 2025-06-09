@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Neuen NFS Export anlegen</h2>
+<h2>NFS Export bearbeiten</h2>
 <form method="POST">
   <div class="mb-3">
     <label for="path" class="form-label">Pfad</label>
-    <input type="text" class="form-control" id="path" name="path" required />
+    <input type="text" class="form-control" id="path" name="path" value="{{ export.path }}" required />
   </div>
   <div class="mb-3">
     <label for="options" class="form-label">Optionen</label>
-    <input type="text" class="form-control" id="options" name="options" required placeholder="z.B. 192.168.1.0/24(rw,sync,no_subtree_check)" />
+    <input type="text" class="form-control" id="options" name="options" value="{{ export.options }}" required />
   </div>
-  <button type="submit" class="btn btn-success">Anlegen</button>
+  <button type="submit" class="btn btn-primary">Speichern</button>
   <a href="{{ url_for('nfs.exports_list') }}" class="btn btn-secondary">Abbrechen</a>
 </form>
 {% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Neuen Samba Share anlegen</h2>
+<form method="POST">
+  <div class="mb-3">
+    <label for="share_name" class="form-label">Share-Name</label>
+    <input type="text" class="form-control" id="share_name" name="share_name" required />
+  </div>
+  <div class="mb-3">
+    <label for="path" class="form-label">Pfad</label>
+    <input type="text" class="form-control" id="path" name="path" required />
+  </div>
+  <button type="submit" class="btn btn-success">Anlegen</button>
+  <a href="{{ url_for('smb.dashboard') }}" class="btn btn-secondary">Abbrechen</a>
+</form>
+{% endblock %}
